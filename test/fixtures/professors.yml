@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstName: MyString
+  lastName: MyString
+  helpfulness: 1.5
+  pedagogy: 1.5
+  easiness: 1.5
+  overall: 1.5
+
+two:
+  firstName: MyString
+  lastName: MyString
+  helpfulness: 1.5
+  pedagogy: 1.5
+  easiness: 1.5
+  overall: 1.5
