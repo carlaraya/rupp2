@@ -1,0 +1,12 @@
+<%= form_with(model: @professor, local:true) do |f| %>
+    <% @professor.errors.full_messages.each do |m|%>
+	<span><%= m %></span>
+    <% end %>
+
+    <%= f.label :firstName %>
+    <%= f.text_field :firstName %>
+    <%= f.label :lastName %>
+    <%= f.text_field :lastName%>
+
+    <%= f.submit %>
+<% end %>
