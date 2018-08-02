@@ -1,2 +1,6 @@
 <%= @professor.firstName %>
 <%= @professor.lastName %>
+
+<% @professor.reviews.each do |review| %>
+    <%= render "reviews/review", review: review %>
+<% end %>

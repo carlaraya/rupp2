@@ -1,0 +1,29 @@
+<%= form_for([@professor, @review], local: true, url: professor_reviews_path) do |f| %>
+
+    <% @review.errors.full_messages.each do |m|%>
+	<span><%= m %></span>
+    <% end %>
+
+    <%= f.label :classTaken, "Class Taken" %>
+    <%= f.text_field :classTaken %>
+
+    <%= f.label :year %>
+    <%= f.text_field :year, value: Time.current.year %>
+
+    <%= f.label :attendance %>
+    <%= f.text_field :attendance%>
+
+    <%= f.label :helpfulness %>
+    <%= f.select :helpfulness, options_for_select([1,2,3,4,5]) %>
+
+    <%= f.label :pedagogy%>
+    <%= f.select :pedagogy, options_for_select([1,2,3,4,5]) %>
+
+    <%= f.label :easiness%>
+    <%= f.select :easiness, options_for_select([1,2,3,4,5]) %>
+
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+
+    <%= f.submit %>
+<% end %>
