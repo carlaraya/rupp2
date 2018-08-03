@@ -1,3 +1,4 @@
+<div class="column is-half">
 <div class="box">
     <article class="media">
 	<div class="level">
@@ -10,8 +11,8 @@
 	</div>
 	<div class="media-content">
 	    <div class="content">
-		<strong><%= link_to display_name(professor), professor %></strong>
-		<br>
+		<h3 class="title"><%= link_to display_name(professor), professor, class: "has-text-primary" %></h3>
+		<p class = "subtitle">
 		<small>
 		<span>Helpfulness: <%= professor.helpfulness %> </span>
 		<span class= "is-size-7"> / 5.0</span>
@@ -22,7 +23,9 @@
 		<span>Easiness: <%= professor.easiness%> </span>
 		<span class= "is-size-7"> / 5.0</span>
 		</small>
+		</p>
 	    </div>
 	</div>
     </article>
+</div>
 </div>
