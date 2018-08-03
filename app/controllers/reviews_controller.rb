@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
 
   def create
       @review = Review.new(review_params)
-      @review.professor = @professor
+      @professor.reviews << @review
       
       if @review.save
 	redirect_to @professor, notice: "Review was successfully submitted"

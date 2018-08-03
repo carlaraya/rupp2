@@ -1,6 +1,45 @@
-<%= @professor.firstName %>
-<%= @professor.lastName %>
 
-<% @professor.reviews.each do |review| %>
-    <%= render "reviews/review", review: review %>
-<% end %>
+<% color = get_rating_color @professor.overall %>
+<section class="<%= "hero is-bold " + color if not color.blank? %>">
+    <div class="hero-body">
+	<div class="container">
+	    <h1 class="title is-1"><%=display_name @professor %></h1>
+	    <h2 class="subtitle is-2"><%= @professor.overall%> / 5.0</h2>
+	</div>
+    </div>
+</section>
+<section class="section">
+	    <nav class="level">
+		<div class="level-item has-text-centered">
+		    <div>
+			<p class = "title">Pedagogy</p>
+		    <%= @professor.pedagogy %>
+			<%= render "shared/progress_bar", value: @professor.pedagogy %>
+		    </div>
+		</div>
+		<div class="level-item has-text-centered">
+		    <div>
+			<p class = "title">Helpfulness</p>
+			<%= @professor.helpfulness %>
+			<%= render "shared/progress_bar", value: @professor.helpfulness %>
+		    </div>
+		</div>
+		<div class="level-item has-text-centered">
+		    <div>
+			<p class = "title">Easiness</p>
+		    <%= @professor.easiness%>
+			<%= render "shared/progress_bar", value: @professor.easiness %>
+		    </div>
+		</div>
+	    </nav>
+
+</section>
+
+<section class="section has-background-light">
+    <div class="container">
+    <h3 class="title has-text-centered">Reviews</h3>
+    <p class = "subtitle has-text-centered"> <%= link_to "Submit a Review", new_professor_review_path(@professor) %> </p>
+    <% @professor.reviews.each do |review| %>
+	<%= render "reviews/review", review: review %>
+    <% end %></div>
+</section>
