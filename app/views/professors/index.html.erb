@@ -1,5 +1,6 @@
-<h3>Professors</h3>
+<div class="container">
+<h1 class = "title has-text-centered">Professors</h1>
 
-<% @professors.each do |prof| %>
-     <%= link_to ([prof.firstName, prof.lastName].join(" ")), prof %>
-<% end %>
+<%= render @professors %>
+</div>
+

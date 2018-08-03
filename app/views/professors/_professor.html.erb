@@ -1,0 +1,28 @@
+<div class="box">
+    <article class="media">
+	<div class="level">
+	    <div class="level-item">
+	<div class="media-left">
+	    <span class="tag is-large is-vcentered">
+		<%= professor.overall %>
+		<span class= "is-size-7"> / 5.0</span>
+	    </span></div></div>
+	</div>
+	<div class="media-content">
+	    <div class="content">
+		<strong><%= link_to display_name(professor), professor %></strong>
+		<br>
+		<small>
+		<span>Helpfulness: <%= professor.helpfulness %> </span>
+		<span class= "is-size-7"> / 5.0</span>
+		<br>
+		<span>Pedagogy: <%= professor.pedagogy %> </span>
+		<span class= "is-size-7"> / 5.0</span>
+		<br>
+		<span>Easiness: <%= professor.easiness%> </span>
+		<span class= "is-size-7"> / 5.0</span>
+		</small>
+	    </div>
+	</div>
+    </article>
+</div>
