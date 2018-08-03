@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor, only: [:index, :set_review, :create]
+  before_action :set_professor, only: [:new, :index, :set_review, :create]
 
   def index
     @reviews = @professor.reviews
