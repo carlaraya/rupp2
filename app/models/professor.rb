@@ -4,6 +4,8 @@ class Professor
 
   field :first_name, type: String
   field :last_name, type: String
+  field :department, type: String
+
   field :helpfulness, type: Float, default: 0.0
   field :pedagogy, type: Float, default: 0.0
   field :easiness, type: Float, default: 0.0
