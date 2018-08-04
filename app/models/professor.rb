@@ -1,17 +1,19 @@
 class Professor
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::Attributes::Dynamic
 
-  field :firstName, type: String
-  field :lastName, type: String
+  field :first_name, type: String
+  field :last_name, type: String
   field :helpfulness, type: Float, default: 0.0
   field :pedagogy, type: Float, default: 0.0
   field :easiness, type: Float, default: 0.0
   field :overall, type: Float, default: 0.0
-  validates_presence_of :firstName, :lastName
 
-  has_many :reviews, after_add: :calculate_ratings
+  index({ first_name: 1, last_name: 1 })
+
+  has_many :reviews, before_add: :calculate_ratings
+
+  validates_presence_of :first_name, :last_name
 
   protected
   def calculate_ratings(review)
@@ -20,12 +22,11 @@ class Professor
       self.pedagogy = review.pedagogy
       self.easiness = review.easiness
     else
-      self.helpfulness = (helpfulness * reviews_count + review.helpfulness) / (reviews_count + 1)
-      self.pedagogy = (pedagogy * reviews_count + review.pedagogy) / (reviews_count + 1)
-      self.easiness = (easiness * reviews_count + review.easiness) / (reviews_count + 1)
+      self.helpfulness = (helpfulness * reviews.length + review.helpfulness) / (reviews.length + 1)
+      self.pedagogy = (pedagogy * reviews.length + review.pedagogy) / (reviews.length + 1)
+      self.easiness = (easiness * reviews.length + review.easiness) / (reviews.length + 1)
     end
     self.overall = (pedagogy + easiness + helpfulness) / 3.0
+    self.save
   end
 end
-
-

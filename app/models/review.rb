@@ -7,13 +7,13 @@ class Review
   field :pedagogy, type: Integer
   field :easiness, type: Integer
   field :overall, type: Float
-  field :classTaken, type: String
+  field :class_taken, type: String
   field :year, type: String
   field :attendance, type: String
 
   validates_presence_of :helpfulness, :pedagogy, :easiness
 
-  belongs_to :professor, counter_cache: true
+  belongs_to :professor, index: true
 
   before_save :assign_overall
 
