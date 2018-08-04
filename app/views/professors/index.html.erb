@@ -1,5 +1,5 @@
 <h3>Professors</h3>
 
 <% @professors.each do |prof| %>
-     <%= link_to ([prof.firstName, prof.lastName].join(" ")), prof %>
+     <%= link_to ([prof.first_name, prof.last_name].join(" ")), prof %>
 <% end %>

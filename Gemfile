@@ -59,5 +59,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 7.0'
 gem 'bson_ext'
-
 gem 'mongoid-locker'
+#CSS Framework Bulma
+gem "bulma-rails", "~> 0.7.1"
+
+#Font Icons
+gem "font-awesome-rails"
+

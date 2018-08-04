@@ -1,2 +1,23 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section class="hero has-background-primary">
+    <div class="hero-body">
+	<div class="container">
+	    <div class="has-text-centered">
+		<%= link_to "RUPP", root_path, class: "is-white" %>
+	    </div>
+	</div>
+    </div>
+</section>
+<section class="section has-background-light">
+    <div class="container">
+    <%= form_for "" do |f| %>
+	<p class = "control has-icons-left">
+	<%= f.text_field :search, class: "input is-medium", placeholder: "Search" %>
+	    <span class="icon is-small is-left">
+	      <%= fa_icon "search" %>
+	    </span>
+	</p>
+
+
+    <% end %>
+    </div>
+</section>

@@ -17,6 +17,7 @@ class Professor
 
   protected
   def calculate_ratings(review)
+    reviews_count = self.reviews.count
     if not has_reviews?
       self.helpfulness = review.helpfulness
       self.pedagogy = review.pedagogy
@@ -29,4 +30,6 @@ class Professor
     self.overall = (pedagogy + easiness + helpfulness) / 3.0
     self.save
   end
+
+
 end
