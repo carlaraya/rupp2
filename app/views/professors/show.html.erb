@@ -8,8 +8,8 @@
     </div>
     <div class="hero-body">
 	<div class="container">
-	    <h1 class="title is-2 has-text-centered">Overall: <%= display_float @professor.overall%>
-	    <h2 class="subtitle is-3 has-text-centered"><%= get_rating_name @professor.overall %></h1>
+	    <h1 class="title is-2 has-text-centered">Overall: <%= display_float @professor.overall%></h1>
+	    <h2 class="subtitle is-3 has-text-centered"><%= get_rating_name @professor.overall %></h2>
 	</div>
     </div>
 </section>
@@ -50,4 +50,8 @@
     <% @professor.reviews.each do |review| %>
 	<%= render "reviews/review", review: review %>
     <% end %></div>
+    <br>
+    <% if not @professor.reviews.any? %>
+	<h3 class = "subtitle is-5 has-text-centered">No reviews yet. Click <%= link_to "here", new_professor_review_path(@professor) %> to write one </h3>
+    <% end %>
 </section>
