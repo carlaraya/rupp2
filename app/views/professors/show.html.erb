@@ -3,8 +3,14 @@
 <section class="<%= "hero is-bold " + color if not color.blank? %>">
     <div class="hero-body">
 	<div class="container">
-	    <h1 class="title is-1"><%=display_name @professor %></h1>
-	    <h2 class="subtitle is-2"><em>Overall: <%= @professor.overall%> / 5.0</em></h2>
+	    <h1 class="title is-1 has-text-centered"><%=display_name @professor %></h1>
+	    </h2>
+	</div>
+    </div>
+    <div class="hero-body">
+	<div class="container">
+	    <h1 class="title is-2 has-text-centered">Overall: <%= display_float @professor.overall%>
+	    <h2 class="subtitle is-3 has-text-centered"><%= get_rating_name @professor.overall %></h1>
 	</div>
     </div>
 </section>
@@ -13,22 +19,25 @@
 		<div class="level-item has-text-centered">
 		    <div>
 			<p class = "title">Pedagogy</p>
-		    <%= @professor.pedagogy %>
+			<%= display_float @professor.pedagogy %><br>
 			<%= render "shared/progress_bar", value: @professor.pedagogy %>
+			<%= get_rating_name @professor.pedagogy %>
 		    </div>
 		</div>
 		<div class="level-item has-text-centered">
 		    <div>
 			<p class = "title">Helpfulness</p>
-			<%= @professor.helpfulness %>
+			<%= display_float @professor.helpfulness %>
 			<%= render "shared/progress_bar", value: @professor.helpfulness %>
+			<%= get_rating_name @professor.helpfulness%>
 		    </div>
 		</div>
 		<div class="level-item has-text-centered">
 		    <div>
 			<p class = "title">Easiness</p>
-		    <%= @professor.easiness%>
+		    <%= display_float @professor.easiness%>
 			<%= render "shared/progress_bar", value: @professor.easiness %>
+			<%= get_rating_name @professor.easiness %>
 		    </div>
 		</div>
 	    </nav>

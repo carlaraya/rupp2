@@ -13,4 +13,23 @@ module ApplicationHelper
 	end
 	color
     end
+
+    def display_float float
+	number_with_precision(float, precision: 2)
+    end
+
+    def get_rating_name value
+	if value <= 1
+	    word = "Very poor"
+	elsif value <= 2
+	    word = "Poor"
+	elsif value <= 3
+	    word = "Fair"
+	elsif value <= 4
+	    word = "Good"
+	else
+	    word = "Excellent"
+	end
+	word
+    end
 end

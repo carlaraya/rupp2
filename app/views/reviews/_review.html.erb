@@ -1,6 +1,9 @@
 <div class="box">
     <article class="media">
 	<div class="media-left">
+	    <strong>Overall: <%= display_float review.overall %></strong><br>
+	    <%= render "shared/progress_bar", value: review.overall%>
+	    <hr>
 	    Helpfulness: <%= review.helpfulness %><br>
 	    <%= render "shared/progress_bar", value: review.helpfulness %>
 	    Pedagogy: <%= review.pedagogy %><br>
