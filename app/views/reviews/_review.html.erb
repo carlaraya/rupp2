@@ -4,16 +4,18 @@
 	    <strong>Overall: <%= display_float review.overall %></strong><br>
 	    <%= render "shared/progress_bar", value: review.overall%>
 	    <hr>
-	    Helpfulness: <%= review.helpfulness %><br>
-	    <%= render "shared/progress_bar", value: review.helpfulness %>
 	    Pedagogy: <%= review.pedagogy %><br>
 	    <%= render "shared/progress_bar", value: review.pedagogy%>
+	    Helpfulness: <%= review.helpfulness %><br>
+	    <%= render "shared/progress_bar", value: review.helpfulness %>
 	    Easiness: <%= review.easiness %>
 	    <%= render "shared/progress_bar", value: review.easiness%>
 	</div>
     <div class="media-content">
+	<em>
 	<strong>Class:</strong> <%= review.class_taken %><br>
-	<strong>Year:</strong> <%= review.year %>
+	<strong>Year:</strong> <%= review.year %><br> <br>
+	</em>
 	<p><%= review.comment %></p>
     </div>
     </article>

@@ -16,6 +16,20 @@ class Professor
   has_many :reviews, before_add: :calculate_ratings
 
   validates_presence_of :first_name, :last_name
+  
+
+  def full_name
+      [self.first_name, self.last_name] .join(" ")
+  end
+
+  def self.search query
+      any_of(
+		{first_name: /.*#{query}.*/i},
+		{last_name: /.*#{query}.*/i}
+	    
+	    )
+  end
+
 
   protected
   def calculate_ratings(review)
@@ -32,6 +46,7 @@ class Professor
     self.overall = (pedagogy + easiness + helpfulness) / 3.0
     self.save
   end
+
 
 
 end

@@ -1,8 +1,16 @@
 <section class="section">
     <div class="container">
+	<%= form_for "", method: :get, local: true do |f| %>
+	    <p class = "control has-icons-left">
+		<%= f.text_field :q, class: "input is-medium", placeholder: "Search" %>
+		<span class="icon is-small is-left">
+		    <%= fa_icon "search" %>
+		</span>
+	    </p>
+	<% end %>
 	<h1 class = "title has-text-centered has-text-primary">Professors</h1>
 
-	    <%= render @professors %>
+	<%= render @professors %>
 
     </div>
 </section>

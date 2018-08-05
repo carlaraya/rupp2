@@ -1,7 +1,12 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
   def index
-      @professors = Professor.all.order_by("last_name ASC")
+      if not params[:q].blank?
+	  @professors = Professor.search(params[:q])
+      else
+	  @professors = Professor.all
+      end
+      @professors = @professors.order_by("last_name ASC")
   end
 
   def show
