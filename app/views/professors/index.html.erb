@@ -1,5 +1,10 @@
-<h3>Professors</h3>
+<section class="section">
+    <div class="container">
+	<h1 class = "title has-text-centered has-text-primary">Professors</h1>
 
-<% @professors.each do |prof| %>
-     <%= link_to ([prof.first_name, prof.last_name].join(" ")), prof %>
-<% end %>
+	<div class="columns">
+	    <%= render @professors %>
+	</div>
+
+    </div>
+</section>

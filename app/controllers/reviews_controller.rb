@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor, only: [:index, :set_review, :create]
+  before_action :set_professor, only: [:new, :index, :set_review, :create]
 
   def index
     @reviews = @professor.reviews
@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
 
   def create
       @review = Review.new(review_params)
-      @review.professor = @professor
+      @professor.reviews << @review
       
       if @review.save
 	redirect_to @professor, notice: "Review was successfully submitted"

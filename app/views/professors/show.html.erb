@@ -1,6 +1,53 @@
-<%= @professor.first_name %>
-<%= @professor.last_name %>
+<% color = get_rating_color @professor.overall %>
+<section class="<%= "hero is-bold " + color if not color.blank? %>">
+    <div class="hero-body">
+	<div class="container">
+	    <h1 class="title is-1 has-text-centered"><%=display_name @professor %></h1>
+	    </h2>
+	</div>
+    </div>
+    <div class="hero-body">
+	<div class="container">
+	    <h1 class="title is-2 has-text-centered">Overall: <%= display_float @professor.overall%>
+	    <h2 class="subtitle is-3 has-text-centered"><%= get_rating_name @professor.overall %></h1>
+	</div>
+    </div>
+</section>
+<section class="section">
+	    <nav class="level">
+		<div class="level-item has-text-centered">
+		    <div>
+			<p class = "title">Pedagogy</p>
+			<%= display_float @professor.pedagogy %><br>
+			<%= render "shared/progress_bar", value: @professor.pedagogy %>
+			<%= get_rating_name @professor.pedagogy %>
+		    </div>
+		</div>
+		<div class="level-item has-text-centered">
+		    <div>
+			<p class = "title">Helpfulness</p>
+			<%= display_float @professor.helpfulness %>
+			<%= render "shared/progress_bar", value: @professor.helpfulness %>
+			<%= get_rating_name @professor.helpfulness%>
+		    </div>
+		</div>
+		<div class="level-item has-text-centered">
+		    <div>
+			<p class = "title">Easiness</p>
+		    <%= display_float @professor.easiness%>
+			<%= render "shared/progress_bar", value: @professor.easiness %>
+			<%= get_rating_name @professor.easiness %>
+		    </div>
+		</div>
+	    </nav>
 
-<% @professor.reviews.each do |review| %>
-    <%= render "reviews/review", review: review %>
-<% end %>
+</section>
+
+<section class="section has-background-light">
+    <div class="container">
+    <h3 class="title has-text-centered">Reviews</h3>
+    <p class = "subtitle has-text-centered"> <%= link_to "Submit a Review", new_professor_review_path(@professor) %> </p>
+    <% @professor.reviews.each do |review| %>
+	<%= render "reviews/review", review: review %>
+    <% end %></div>
+</section>

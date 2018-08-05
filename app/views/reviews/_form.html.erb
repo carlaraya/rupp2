@@ -4,26 +4,50 @@
 	<span><%= m %></span>
     <% end %>
 
-    <%= f.label :class_taken, "Class Taken" %>
-    <%= f.text_field :class_taken %>
+    <div class=  "field is-grouped">
+	<%= f.label :helpfulness , class: "label is-extended"%><br>
+	<div class = "control">
+	    <div class = "select">
+		<%= f.select :helpfulness, options_for_select([1,2,3,4,5]) %>
+	    </div>
+	</div>
 
-    <%= f.label :year %>
-    <%= f.text_field :year, value: Time.current.year %>
+	<%= f.label :pedagogy , class: "label"%>
+	<div class = "control">
+	    <div class = "select">
+		<%= f.select :pedagogy, options_for_select([1,2,3,4,5]) %>
+	    </div>
+	</div>
 
-    <%= f.label :attendance %>
-    <%= f.text_field :attendance%>
+	<%= f.label :easiness , class: "label"%>
+	<div class = "control">
+	    <div class = "select">
+		<%= f.select :easiness, options_for_select([1,2,3,4,5]) %>
+	    </div>
+	</div>
+    </div>
 
-    <%= f.label :helpfulness %>
-    <%= f.select :helpfulness, options_for_select([1,2,3,4,5]) %>
+    <div class=  "field">
+	<%= f.label :comment , class: "label"%>
+	<div class = "control">
+	    <%= f.text_area :comment, class:'textarea' %>
+	</div>
+    </div>
+    <div class=  "field">
+	<%= f.label :class_taken, "Class Taken", class: "label"%>
+	<div class = "control">
+	    <%= f.text_field :class_taken, class: "input" %>
+	</div>
+    </div>
 
-    <%= f.label :pedagogy%>
-    <%= f.select :pedagogy, options_for_select([1,2,3,4,5]) %>
+    <div class=  "field">
+	<%= f.label :year, "Year Taken" , class: "label"%>
+	<div class = "control">
+	    <%= f.text_field :year, value: Time.current.year , class: "input"%>
+	</div>
+    </div>
 
-    <%= f.label :easiness%>
-    <%= f.select :easiness, options_for_select([1,2,3,4,5]) %>
-
-    <%= f.label :comment %>
-    <%= f.text_area :comment %>
-
-    <%= f.submit %>
+    <div class=  "field">
+	<%= f.submit "Submit Review", class: "button is-info" %>
+    </div>
 <% end %>

@@ -1,7 +1,21 @@
-<p><%= review.comment %></p>
-Helpfulness: <%= review.helpfulness %>
-Pedagogy: <%= review.pedagogy %>
-Easiness: <%= review.easiness %>
-Class Taken: <%= review.class_taken %>
-Year: <%= review.year %>
-
+<div class="box">
+    <article class="media">
+	<div class="media-left">
+	    <strong>Overall: <%= display_float review.overall %></strong><br>
+	    <%= render "shared/progress_bar", value: review.overall%>
+	    <hr>
+	    Helpfulness: <%= review.helpfulness %><br>
+	    <%= render "shared/progress_bar", value: review.helpfulness %>
+	    Pedagogy: <%= review.pedagogy %><br>
+	    <%= render "shared/progress_bar", value: review.pedagogy%>
+	    Easiness: <%= review.easiness %>
+	    <%= render "shared/progress_bar", value: review.easiness%>
+	</div>
+    <div class="media-content">
+	<strong>Class:</strong> <%= review.classTaken %><br>
+	<strong>Year:</strong> <%= review.year %>
+	<p><%= review.comment %></p>
+    </div>
+    </article>
+</div>
+>>>>>>> feature
