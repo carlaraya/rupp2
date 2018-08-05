@@ -1,7 +1,7 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
   def index
-      @professors = Professor.all
+      @professors = Professor.all.order_by("last_name ASC")
   end
 
   def show

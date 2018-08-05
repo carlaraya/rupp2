@@ -1,10 +1,9 @@
-<div class="column">
     <div class="box">
 	<article class="media">
 	    <div class="media-left">
 		<% color = get_rating_color professor.overall %>
 		<span class="<%= "tag is-large " + color if not color.blank? %>" >
-		    <%= professor.overall %>
+		    <%= display_float professor.overall %>
 		    <span class= "is-size-7"> / 5.0</span>
 		</span>
 	    </div>
@@ -27,4 +26,3 @@
 	    </div>
 	</article>
     </div>
-</div>
