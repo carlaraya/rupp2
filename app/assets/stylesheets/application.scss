@@ -2,4 +2,14 @@ $orange: #ff8300;
 $primary: $orange;
 @import "bulma";
 @import "font-awesome";
-@import "home";
+
+.header
+{
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  overflow-y: hidden;
+  background: url(asset-path("trianglify.png"));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: $orange;
+}

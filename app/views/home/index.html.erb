@@ -1,23 +1,95 @@
-<section class="hero is-large is-primary">
+<section class="hero is-primary is-medium header">
+    <div class = "hero-head" style = "padding-top:40px;">
+	<h1 class = "title has-text-centered is-1">
+	    Hello, UP Students!
+	</h1>
+	<h2 class = "subtitle has-text-centered is-2">Welcome to the new RUPP!</h2>
+    </div>
     <div class="hero-body">
 	<div class="container">
 	    <div class="columns">
 		<div class="column is-half is-centered" style= "margin: auto;">
 		    <div class="notification is-white">
-			<h1 class = "title has-text-centered has-text-black">Rate your UP Professors</h1>
-			<h2 class = "subtitle has-text-centered has-text-black">Search for professors here</h2>
+			<h2 class = "title has-text-centered has-text-black">Rate your UP Professors</h2>
+			<h3 class = "subtitle has-text-centered has-text-black">Search for professors here</h3>
 			<%= form_for "", method: :get do |f| %>
 			    <p class = "control has-icons-left">
 				<%= f.text_field :search, class: "input is-medium", placeholder: "Search" %>
 				<span class="icon is-small is-left">
 				    <%= fa_icon "search" %>
 				</span>
-			    </p>
+			    <% end %>
+			</p>
 		    </div>
 		</div>
 	    </div>
 	</div>
     </div>
+</section>
+<section class = "section">
+    <div class = "columns">
+	<div class = "column is-one-third">
+	    <div class = "card is-shadowless has-text-centered">
+		<div class = "card-image">
+		    <span class = "icon has-text-danger is-size-1">
+			<%= fa_icon "heart" %>
+		    </span>
+		</div>
+		<div class = "card-content">
+			<h3 class = "title">
+			    For UP Students By UP Students 
+			</h3>
+			<p class = "subtitle">
+			    RUPP is still created and maintained by UP Students.
+			    The site is  unaffiliated with any college 
+			    departments or organizations.
+			</p>
+		</div>
+	    </div>
+	</div>
+	<div class = "column is-one-third">
+	    <div class = "card is-shadowless has-text-centered">
+		<div class = "card-image">
+		    <span class = "icon has-text-warning is-size-1 ">
+			<%= fa_icon "shield" %>
+		    </span>
+		</div>
+		<div class = "card-content">
+			<h3 class = "title">
+			    Secure and Anonymous
+			</h3>
+			<p class = "subtitle">
+			    You are not required to submit any data that may be used to trace back to you. Every review you place is untraceable and anonymous.
+			</p>
+			<p class = "subtitle">
+			    So don't worry about professors finding out, because it's impossible for them to know who you are.
+			</p>
+		</div> 
+	    </div> 
+	</div>
+	<div class = "column is-one-third">
+	    <div class = "card is-shadowless has-text-centered">
+		<figure class = "card-image">
+		    <span class = "icon has-text-success is-size-1">
+			<%= fa_icon "plus" %>
+		    </span>
+		</figure>
+		<div class = "card-content">
+			<h3 class = "title">
+			    Constantly Improving
+			</h3>
+			<p class = "subtitle">
+			    This site is constantly approving and accepting feedback. That way we can make sure that students are getting the best experience possible
+			</p>
+			<p class = "subtitle">
+			    Although the site looks and feels new, we still keep all the old reviews on here. So don't worry about losing them!
+			</p>
+		</div>
+	    </div>
+	</div>
+    </div>
+</section>
 
-<% end %>
+<section class = "section has-text-centered">
+    <span class = "is-size-3">RUPP is under new management, but we are still upholding RUPP's core values.</span>
 </section>
