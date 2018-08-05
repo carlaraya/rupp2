@@ -4,7 +4,7 @@
 	    <%= form_for "", method: :get, local: true do |f| %>
 		<div class="field has-addons">
 		<div class = "control has-icons-left is-expanded">
-		    <%= f.text_field :q, class: "input is-medium", placeholder: "Search For Professors" %>
+		    <%= f.text_field :q, class: "input is-medium", placeholder: "Search For Professors", value: params[:q] %>
 		    <span class="icon is-small is-left">
 			<%= fa_icon "search" %>
 		    </span>

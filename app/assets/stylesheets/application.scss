@@ -9,7 +9,8 @@ $primary: $orange;
   width: 100%;
   min-height: auto;
   overflow-y: hidden;
-  background: url(asset-path("trianglify.png"));
+  background-image: url(asset-path("trianglify.png"));
+  background-size: cover;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: $orange;
 }
