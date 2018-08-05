@@ -1,28 +1,28 @@
-    <div class="box">
-	<article class="media">
-	    <div class="media-left">
-		<% color = get_rating_color professor.overall %>
-		<span class="<%= "tag is-large " + color if not color.blank? %>" >
-		    <%= display_float professor.overall %>
-		    <span class= "is-size-7"> / 5.0</span>
-		</span>
+<div class="box">
+    <article class="media">
+	<div class="media-left">
+	    <% color = get_rating_color professor.overall %>
+	    <span class="<%= "tag is-large " + color if not color.blank? %>" >
+		<%= display_float professor.overall %>
+		<span class= "is-size-7"> / 5.0</span>
+	    </span>
+	</div>
+	<div class="media-content">
+	    <div class="content">
+		<h3 class="title"><%= link_to display_name(professor), professor, class: "has-text-primary" %></h3>
+		<p class = "subtitle">
+		    <small>
+			<span>Helpfulness: <%= display_float professor.helpfulness %> </span>
+			<span class= "is-size-7"> / 5.00</span>
+			<br>
+			<span>Pedagogy: <%= display_float professor.pedagogy %> </span>
+			<span class= "is-size-7"> / 5.00</span>
+			<br>
+			<span>Easiness: <%= display_float professor.easiness%> </span>
+			<span class= "is-size-7"> / 5.00</span>
+		    </small>
+		</p>
 	    </div>
-	    <div class="media-content">
-		<div class="content">
-		    <h3 class="title"><%= link_to display_name(professor), professor, class: "has-text-primary" %></h3>
-		    <p class = "subtitle">
-			<small>
-			    <span>Helpfulness: <%= display_float professor.helpfulness %> </span>
-			    <span class= "is-size-7"> / 5.00</span>
-			    <br>
-			    <span>Pedagogy: <%= display_float professor.pedagogy %> </span>
-			    <span class= "is-size-7"> / 5.00</span>
-			    <br>
-			    <span>Easiness: <%= display_float professor.easiness%> </span>
-			    <span class= "is-size-7"> / 5.00</span>
-			</small>
-		    </p>
-		</div>
-	    </div>
-	</article>
-    </div>
+	</div>
+    </article>
+</div>

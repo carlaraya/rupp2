@@ -1,15 +1,21 @@
-<section class="section">
+<section class="section has-background-light">
     <div class="container">
-	<%= form_for "", method: :get, local: true do |f| %>
-	    <p class = "control has-icons-left">
-		<%= f.text_field :q, class: "input is-medium", placeholder: "Search" %>
-		<span class="icon is-small is-left">
-		    <%= fa_icon "search" %>
-		</span>
-	    </p>
-	<% end %>
-	<h1 class = "title has-text-centered has-text-primary">Professors</h1>
+	<div class="box">
+	    <%= form_for "", method: :get, local: true do |f| %>
+		<div class="field has-addons">
+		<div class = "control has-icons-left is-expanded">
+		    <%= f.text_field :q, class: "input is-medium", placeholder: "Search For Professors" %>
+		    <span class="icon is-small is-left">
+			<%= fa_icon "search" %>
+		    </span>
+		</div>
+		<div class="control">
+		    <%= f.submit "Search", class: "button is-info is-medium" %>
+		</div>
+		</div>
+	    <% end %>
 
+	</div>
 	<%= render @professors %>
 
     </div>
