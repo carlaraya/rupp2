@@ -69,3 +69,5 @@ gem "font-awesome-rails"
 #Pagination
 gem 'kaminari-mongoid'
 gem 'kaminari-actionview'
+
+gem 'mongoid_search'

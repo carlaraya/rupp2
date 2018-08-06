@@ -1,6 +1,7 @@
 class Professor
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Search
 
   field :first_name, type: String
   field :last_name, type: String
@@ -16,6 +17,8 @@ class Professor
   has_many :reviews, before_add: :calculate_ratings
 
   validates_presence_of :first_name, :last_name
+
+  search_in :first_name, :last_name
   
 
   def full_name
@@ -23,11 +26,7 @@ class Professor
   end
 
   def self.search query
-      any_of(
-		{first_name: /.*#{query}.*/i},
-		{last_name: /.*#{query}.*/i}
-	    
-	    )
+      full_text_search(query, match: :all)
   end
 
 
