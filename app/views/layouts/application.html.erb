@@ -5,13 +5,32 @@
   <body>
       <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <%= link_to "RUPP", root_path, class: "navbar-item" %>
+    <%= link_to "Rate your UP Professor", root_path, class: "navbar-item" %>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
+  </div>
+  <div class="navbar-menu">
+      <div class="navbar-end">
+	  <div class="navbar-item">
+	  <%= form_with(url: professors_path, method: :get, local: true) do |f| %>
+	      <div class = "field has-addons">
+		  <div class = "control has-icons-left">
+		      <%= f.text_field :q, class: "input is-medium", placeholder: "Search" %>
+		      <span class="icon is-small is-left">
+			  <%= fa_icon "search" %>
+		      </span>
+		  </div>
+		  <div class="control">
+		      <%= f.submit "Search", class: "button is-info is-medium" %>
+		  </div>
+	      </div>
+	  <% end %>
+	  </div>
+      </div>
   </div>
 </nav>
     <%= yield %>

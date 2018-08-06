@@ -66,3 +66,6 @@ gem "bulma-rails", "~> 0.7.1"
 #Font Icons
 gem "font-awesome-rails"
 
+#Pagination
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
