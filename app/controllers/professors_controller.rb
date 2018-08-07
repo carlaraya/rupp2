@@ -6,7 +6,20 @@ class ProfessorsController < ApplicationController
       else
 	  @professors = Professor.all
       end
-      @professors = @professors.order_by("last_name ASC")
+      if not params[:order].blank?
+	if params[:order] == "rating"
+	    order = "overall"  
+	else
+	    order = "last_name"
+	end
+      end
+
+      if not params[:sort].blank?
+	sort = params[:sort]
+      else
+	  sort = "DESC"
+      end
+	  @professors = @professors.order_by(order + " " + sort)
   end
 
   def show
